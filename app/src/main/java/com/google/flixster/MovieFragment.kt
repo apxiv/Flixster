@@ -20,7 +20,7 @@ import org.json.JSONArray
 
 private const val API_KEY = BuildConfig.API_KEY
 
-class MovieFragment: Fragment(), OnListFragmentInteractionListener {
+class MovieFragment : Fragment(), OnListFragmentInteractionListener {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -52,11 +52,11 @@ class MovieFragment: Fragment(), OnListFragmentInteractionListener {
             ) {
                 progressBar.hide()
 
-                val resultsJSON : JSONArray = json.jsonObject.getJSONArray("results")
-                val moviesRawJSON : String = resultsJSON.toString()
+                val resultsJSON: JSONArray = json.jsonObject.getJSONArray("results")
+                val moviesRawJSON: String = resultsJSON.toString()
                 val gson = Gson()
                 val arrayMovieType = object : TypeToken<List<Movie>>() {}.type
-                val models : List<Movie> = gson.fromJson(moviesRawJSON, arrayMovieType)
+                val models: List<Movie> = gson.fromJson(moviesRawJSON, arrayMovieType)
                 recyclerView.adapter = MovieAdapter(models, this@MovieFragment)
 
                 // Look for this in Logcat:

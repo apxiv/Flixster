@@ -7,7 +7,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class MovieAdapter(private val movies: List<Movie>, private val itemListener: OnListFragmentInteractionListener): RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
+class MovieAdapter(
+    private val movies: List<Movie>,
+    private val itemListener: OnListFragmentInteractionListener
+) : RecyclerView.Adapter<MovieAdapter.MovieViewHolder>() {
     inner class MovieViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
@@ -25,7 +28,7 @@ class MovieAdapter(private val movies: List<Movie>, private val itemListener: On
             findViewById<TextView>(R.id.movie_overview).text = movies[position].overview
         }
         Glide.with(holder.itemView)
-            .load("https://image.tmdb.org/t/p/w500/" + movies[position].posterUrl)
+            .load("https://image.tmdb.org/t/p/w500/${movies[position].posterUrl}")
             .centerInside()
             .into(holder.itemView.findViewById(R.id.movie_poster))
     }
