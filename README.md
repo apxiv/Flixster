@@ -27,7 +27,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://i.imgur.com/1vfusbH.gif' title='Movie' width='270' height='570' alt='Theater' />
+<img src='https://i.imgur.com/biFcRDt.gif' title='Movie' width='270' height='570' alt='Theater' />
 
 
 ## License
