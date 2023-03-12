@@ -16,10 +16,9 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 - [X] Improve and customize the user interface through styling and coloring
-- [ ] Landscape Mode
-  [ ] Implement Glide to display placeholder graphics during loading
-  - Note: this feature is difficult to capture in a GIF without throttling internet speeds.  Instead, include an additional screencap of your Glide code implementing the feature.  (<10 lines of code)
-
+- [X] Landscape Mode
+- [X] Implement Glide to display placeholder graphics during loading
+  
 The following **additional** features are implemented:
 
 - [X] Hide an API key
@@ -30,9 +29,6 @@ Here's a walkthrough of implemented user stories:
 
 <img src='./app/src/main/res/drawable/movie.gif' title='Movie' width='270' height='570' alt='Theater' />
 
-## Notes
-
-Describe any challenges encountered while building the app.
 
 ## License
 

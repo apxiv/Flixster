@@ -1,5 +1,6 @@
 package com.google.flixster
 
+import android.content.res.Configuration
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,9 +28,26 @@ class MovieAdapter(
             findViewById<TextView>(R.id.movie_title).text = movies[position].title
             findViewById<TextView>(R.id.movie_overview).text = movies[position].overview
         }
-        Glide.with(holder.itemView)
-            .load("https://image.tmdb.org/t/p/w500/${movies[position].posterUrl}")
-            .centerInside()
-            .into(holder.itemView.findViewById(R.id.movie_poster))
+
+        val orientation = holder.itemView.resources.configuration.orientation
+
+        if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            Glide.with(holder.itemView)
+                .load("https://image.tmdb.org/t/p/w500/${movies[position].posterUrl}")
+                .centerCrop()
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.popcorn)
+                .into(holder.itemView.findViewById(R.id.movie_poster))
+        } else {
+            // portrait orientation
+            Glide.with(holder.itemView)
+                .load("https://image.tmdb.org/t/p/w500/${movies[position].posterUrl}")
+                .centerInside()
+                .placeholder(R.drawable.loading)
+                .error(R.drawable.popcorn)
+                .into(holder.itemView.findViewById(R.id.movie_poster))
+        }
+
     }
+
 }
